@@ -1,1 +1,13 @@
 #hotel css
+
+.page-content {
+    background-color: "";
+}
+
+.itemHotel {
+    position: relative;
+}
+
+.itemHotel .slide img {
+    width: 100%;
+}
