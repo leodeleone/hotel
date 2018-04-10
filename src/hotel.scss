@@ -1,0 +1,416 @@
+$corPrincipalSalmao: #f6534c;
+$corSecundariaLama: #302c29;
+$corEscuraTexto: rgb(69, 69, 69);
+
+.mcolor-header {
+  background-color: $corPrincipalSalmao;
+  color: #fff;
+}
+
+.mcolor-busca-dark {
+  background-color: darken($corSecundariaLama, 6%);
+  &:hover {
+    background-color: darken($corSecundariaLama, 10%);
+  }
+}
+
+.mcolor-cliente-principal-bg {
+  background-color: $corSecundariaLama;
+}
+
+.mcolor-cliente-principal-bg-hover:hover,
+.mcolor-cliente-principal-bg-hover2:hover {
+  background-color: lighten($corSecundariaLama, 12%);
+}
+
+.mcolor-busca-bright {
+  background-color: lighten($corSecundariaLama, 12%);
+  &:hover {
+    background-color: lighten($corSecundariaLama, 14%);
+  }
+}
+
+.mcolor-cliente-principal-text,
+.mcolor-label-text2,
+#destino:hover,
+#datas:hover,
+#adultos:hover,
+#criancas:hover,
+#modificarBusca:hover,
+.mcolor-label-text {
+  color: $corPrincipalSalmao;
+}
+
+.mcolor-action-btn {
+  background-color: $corPrincipalSalmao !important;
+  border-color: $corPrincipalSalmao !important;
+  &:hover {
+    background-color: lighten($corPrincipalSalmao, 5%) !important;
+    border-color: lighten($corPrincipalSalmao, 5%) !important;
+  }
+}
+
+.bloco-seletor-adulto-selected,
+.bloco-seletor-crianca-selected {
+  background-color: lighten($corSecundariaLama, 12%) !important;
+}
+
+#criancas-quantidade-label,
+#busca-promocode-label {
+  color: #fff;
+}
+
+/* filtros */
+
+#busca-fechada-container #imgDestino {
+  margin-left: 24px;
+}
+
+.seletor-idade-erro {
+  border: solid 1px $corPrincipalSalmao;
+}
+
+.content-section {
+  width: 1010px;
+}
+
+.page-content {
+  background-color: transparent; // remove fundo branco //
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+#listagemHoteis::after { // clearfix para separar dos blocos seguintes
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Card com a descrição de um hotel */
+
+#listagemHoteis .itemHotel {
+  box-sizing: border-box; // width inclui padding
+  width: calc(33.33% - 30px); // 1/3 menos 2*15px de margin
+  height: 547px;
+  position: relative;
+  margin: 15px !important; // força tirar o margin-top 0px no first child
+  box-shadow: 2px 3px 20px lightgrey;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border: none;
+  float: left;
+  /* Bloco de Imagens/slider */
+  .slider-imagens-hotel {
+    float: initial;
+    width: auto;
+    ;
+    height: auto;
+  }
+  .slide img {
+    width: 260px;
+    height: 230px;
+  }
+  >img { // caso o card não possua slide, afeta primeira imagem //
+    width: 260px;
+    height: 230px;
+  }
+  .img-hotel-arrow-right {
+    left: auto; // sobrescreve valor anterior //
+    right: 0px;
+  }
+  /* Bloco com todas outras informações do hotel */
+  .itemHotelContent {
+    margin-left: 0px; // tira margin anterior //
+    height: 100%;
+    /* Row com Nome, Endereço e Telefone do hotel */
+    .tituloHotel {
+      width: 100%;
+      height: auto;
+      margin-top: 15px;
+      .itemVarNomeHotel {
+        font-size: 20px;
+        color: $corEscuraTexto;
+        &:hover {
+          color: lighten($corEscuraTexto, 20%);
+        }
+      }
+      .infoHotel {
+        margin-top: 15px;
+        &:hover {
+          text-decoration: underline;
+        }
+        .icoEnderecoHotel>span {
+          top: -4px;
+        }
+        .itemVarEnderecoHotel {
+          display: inline-block;
+          text-transform: uppercase;
+        }
+        .itemVarTelefoneHotel {
+          margin-left: 0px;
+          display: inline-block;
+        }
+      }
+    } // fim .tituloHotel
+    /* Row com informação sobre Acomodação */
+    .infoAcomodacao {
+      margin-top: 20px;
+      width: 100%;
+      .icoAcomodacaoUmaPessoa {
+        width: 20px;
+      }
+      .hoteis-ico-mais-pessoas {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        font-size: 12px;
+      }
+      .itemAcomodacao {
+        color: $corEscuraTexto;
+      }
+      .itemVarNomeAcomodacao {
+        margin-left: 10px;
+      }
+      .itemVarDescricaoAcomodacao {
+        margin-left: 47px;
+        margin-top: 0px;
+      }
+      .itemBtnSelecionarAcomodacao {
+        display: none;
+      }
+    } // fim .infoAcomodacao
+    /* Row com informações de preço e botão de Reserva */
+    .blocoReserve {
+      width: 100%;
+      float: left;
+      position: relative;
+      margin-top: 28px;
+      .valorContainer {
+        float: left;
+        clear: left;
+      }
+      .itemVarValorSemDesconto {
+        float: left;
+        width: auto;
+        font-size: 12px;
+        color: #6F6F6F;
+        font-weight: 300;
+      }
+      .itemVarDescricaoFormasPagamento,
+      .itemVarPercentualDesconto {
+        display: none;
+      }
+      .itemBtnEfetuarReserva {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        float: none;
+        margin-top: 0px;
+      }
+      .itemVarValorFinal {
+        color: $corEscuraTexto;
+        &.discounted {
+          color: #EF6620; // mantém cor laranja
+        }
+      }
+      .itemVarValorAuxiliar {
+        margin-bottom: 0px;
+      }
+    } // fim .blocoReserve
+    .itemBtnMaisAcomodacoes {
+      margin-top: 28px;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: $corPrincipalSalmao;
+      font-weight: 800;
+      &::after {
+        margin-left: 10px; // aumenta um pouco o espaçamento
+      }
+    }
+  } // fim .itemHotelContent
+  // texto quando indisponível
+  .hotel-indisponivel-texto-container {
+    margin-top: -15px;
+  }
+} // fim .itemHotel
+#buscarNovamente {
+  border: none; // remove border-top dotted
+}
+
+/* MODAL DE PROMOÇÕES */
+
+#promo-modal-overlay {
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 99999;
+  background-color: rgba(69, 69, 69, 0.9);
+}
+
+#promo-modal {
+  overflow: visible !important;
+  height: 560px;
+  width: 930px;
+  background-color: #fff;
+  position: relative;
+  top: calc(50% - 280px); // metade do total menos metade da altura do modal //
+  left: initial;
+  margin: auto;
+  border-radius: 5px;
+  text-align: left;
+  color: $corEscuraTexto;
+  .help-mark {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    background: lighten($corEscuraTexto, 25%);
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: $corPrincipalSalmao;
+    }
+  }
+  /*
+    .promo-tooltip {
+      .promo-tooltip-text {
+        visibility: hidden;
+        width: 270px;
+        background-color: black;
+        color: #fff;
+        text-align: left;
+        border-radius: 12px;
+        padding: 12px;
+        position: absolute;
+        z-index: 999;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -135px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: black transparent transparent transparent;
+        }
+      }
+
+      &:hover .promo-tooltip-text {
+        visibility: visible;
+      }
+    }
+    */
+}
+
+#promo-modal-close {
+  height: 35px;
+  width: 35px;
+  float: right;
+  margin-top: -60px;
+  background-image: url(../Content/img/spirtesheet-busca-overlay.png);
+  background-position: -879px 117px;
+  cursor: pointer;
+  transform: scale(0.75, 0.75);
+}
+
+.promo-modal-header {
+  display: inline-block;
+  margin: 35px 70px;
+  text-transform: uppercase;
+  .promo-modal-title {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+}
+
+#promo-modal-content-container {
+  display: inline-block;
+  height: 75%;
+  overflow: auto;
+  .itemBtnEfetuarReserva {
+    display: inline-block;
+    height: 40px;
+    width: 130px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+}
+
+.promo-card-row {
+  margin-bottom: 50px;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.promo-card {
+  box-sizing: border-box;
+  width: 300px;
+  float: left;
+  overflow: hidden;
+  padding-left: 70px;
+  line-height: 1.6em;
+  border-right: 1px dotted lighten($corEscuraTexto, 25%);
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.promo-nome {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.promo-info-lista {
+  list-style-type: none;
+  color: lighten($corEscuraTexto, 25%);
+}
+
+.promo-info-item::before {
+  content: "-";
+  margin-right: 8px;
+}
+
+.promo-valores { // linha com os preços //
+  margin-top: 10px;
+  .promo-valor-sem-desconto {
+    color: lighten($corEscuraTexto, 30%);
+    text-decoration: line-through;
+    font-weight: 300;
+  }
+  .promo-valor-final {
+    font-weight: bold;
+    font-size: 20px;
+    min-width: 60px;
+  }
+  .promo-valor-final.com-desconto {
+    margin-left: 10px;
+    color: #EF6620;
+  }
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb { // arredonda as pontas da scrollbar. apenas Chrome, Opera e Safari //
+  border-radius: 10px;
+}
